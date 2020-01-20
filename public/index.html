@@ -6,28 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <p>Hello - p</p>
-    <hr>
-    <span>Span</span>
-    <a href="#">Hyper link</a>
-    <div>abra cadabra</div>
-    <div class="one">
-        cadabra abra
-        <p>P in div</p>
-        <span>span in div</span>
+    <div>
+        Text: <input type="text" class="text-input">
     </div>
-    <h1>Hi</h1>
-    <span>Span</span>
-    <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/cat-48.png" alt="cat">
+    <div>
+        Pass: <input type="password" class="pass-input">
+    </div>
+    <div>
+        Range: <input type="range" class="range-input" max="200">
+    </div>
+    <div>
+        Date: <input type="date" class="calendar-input">
+    </div>
+    <div>
+        Color: <input type="color" class="color-input">
+    </div>
+    <div>
+        Checkbox: <input type="checkbox" class="checkbox-input" id="checkbox-input">
+        <label for="checkbox-input">Choose me, please</label>
+    </div>
 
-    <hr>
-    <p><input type="text" value="Hello"></p>
+    <div>
+        Radio:
+        <input type="radio" class="radio-input" id="radio-1" name="r555" value="сидя">
+        <label for="radio-1">Option 1</label>
+        <input type="radio" class="radio-input" id="radio-2" name="r555" value="стоя">
+        <label for="radio-2">Option 2</label>
+        <input type="radio" class="radio-input" id="radio-3" name="r555" value="на крыше">
+        <label for="radio-3">Option3</label>
+    </div>
 
-    <script src="js/script.js"></script>
+    <div>
+        <button class="push">Push</button>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
