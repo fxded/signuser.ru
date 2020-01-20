@@ -1,29 +1,34 @@
-function hello() {
-    console.log('Hello');
-    hello2();
-}
+// парный тег
+document.querySelector('p').innerHTML += ' Пример span <b>Hi</b>';
+document.querySelector('p').innerText += ' Пример span <b>Hi</b>';
+// -----------------------
 
-function hello2() {
-    console.log('hello-2-2-2-22');
-}
+document.querySelector('h1').outerHTML = '<h2>jjjj</h2>';
+document.querySelector('h2').outerText = '<h2>jjjj</h2>';
+// ----------------------
+
+document.querySelector('div').insertAdjacentHTML('beforebegin', 2222);
+document.querySelector('div').insertAdjacentHTML('afterbegin', 333);
+document.querySelector('div').insertAdjacentHTML('afterend', 5555);
+document.querySelector('div').insertAdjacentHTML('beforeend', 4444);
+
+//-----------------------
+
+document.querySelector('.one span').innerHTML = 9999;
+// ----------------------
+console.log(document.querySelector('img').alt);
+document.querySelector('img').alt = 'yellow cat';
 
 
-let btn = document.querySelector('#btn'); // кнопка
-console.log(btn.id);
-btn.onclick = hello;
-// hello();
-//btn.hidden = true;
+console.log(document.querySelector('img').src);
+document.querySelector('img').src = 'https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-48.png';
 
+document.querySelector('title').innerText = 'Lesson 4';
 
-let showModal = document.querySelector('#modal-show'); // кнопку show modal
+console.log(document.querySelector('link').href);
+document.querySelector('link').href = 'css/style2.css';
 
-function show() {
-    let modal = document.querySelector('.modal');
-    //modal.hidden = true;
-    modal.style.display = 'block';
-    modal.style.backgroundColor = 'pink';
-}
-
-showModal.onclick = show;
-//border-radius: 20px;
-//border  - 5px;
+// -------------------------
+console.log(document.querySelector('input').value);
+document.querySelector('input').value = '13.12.2018';
+document.querySelector('input').type = 'range';
