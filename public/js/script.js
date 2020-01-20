@@ -1,33 +1,30 @@
 document.querySelector('.push').onclick = function () {
-    // данные из input type = text
-    console.log(document.querySelector('.text-input').value);
-
-
-    // данные из input type = password
-    console.log(document.querySelector('.pass-input').value);
-
-
-    // данные из input type = range
-    console.log(document.querySelector('.range-input').value);
-
-    // данные из input type = date
-    console.log(document.querySelector('.calendar-input').value);
-
-    // данные из input type = color
-    console.log(document.querySelector('.color-input').value);
-
-    // данные из input type = checkbox
-    console.log(document.querySelector('#checkbox-input').checked);
-    if (document.querySelector('#checkbox-input').checked) {
-        console.log('Даааааа!');
-    }
-    else {
-        console.log('Heeeeeт');
-    }
-
-    console.log('----------------Radio------------');
 
     // данные из input type = radio
     // console.log(document.querySelector('.radio-input[checked="checked"]').value);
 
+    let radio = document.querySelectorAll('.radio-input');
+    //console.log(radio);
+    //radio[0].hidden = true;
+    for (let i = 0; i < radio.length; i = i + 1) {
+        //console.log(radio[i].checked);
+        if (radio[i].checked) {
+            console.log(radio[i].value);
+        }
+    }
+
+    let p = document.querySelectorAll('p');
+    console.log(p);
+    for (let i = 0; i < p.length; i = i + 1) {
+        p[i].style.color = 'red';
+    }
+
+    let option = document.querySelectorAll('#my-select option');
+    console.log(option);
+    for (let i = 0; i < option.length; i = i + 1) {
+        // console.log(option[i].selected);
+        if (option[i].selected) {
+            console.log(option[i].innerHTML);
+        }
+    }
 }
