@@ -1,30 +1,19 @@
-document.querySelector('.push').onclick = function () {
+//ajax(url, method, functionName, dataArray) {
+// POST -> date = '2018-12-30'
 
-    // данные из input type = radio
-    // console.log(document.querySelector('.radio-input[checked="checked"]').value);
 
-    let radio = document.querySelectorAll('.radio-input');
-    //console.log(radio);
-    //radio[0].hidden = true;
-    for (let i = 0; i < radio.length; i = i + 1) {
-        //console.log(radio[i].checked);
-        if (radio[i].checked) {
-            console.log(radio[i].value);
-        }
-    }
+document.querySelector('#btnsnd').onclick = function () {
+    let fname = document.querySelector('#fname'),
+        lname = document.querySelector('#lname');
+    
+    let data = { fname1: fname.value,
+                 lname1: lname.value  };
+    ajax('/', 'POST', showData(data), requestData(data));
+}
 
-    let p = document.querySelectorAll('p');
-    console.log(p);
-    for (let i = 0; i < p.length; i = i + 1) {
-        p[i].style.color = 'red';
-    }
 
-    let option = document.querySelectorAll('#my-select option');
-    console.log(option);
-    for (let i = 0; i < option.length; i = i + 1) {
-        // console.log(option[i].selected);
-        if (option[i].selected) {
-            console.log(option[i].innerHTML);
-        }
-    }
+
+function showData(data) {
+    //data = JSON.parse(data);
+    console.log(data);
 }
