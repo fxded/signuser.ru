@@ -35,38 +35,19 @@ module.exports = function(app, db) {
             } 
         });
   });
- /*   
-    app.get ('/notes/:id', (req, res) => {
-        console.log(req);
-        req.on('data', (data) => {
-            console.log('req: ',data);
-            const   id      = data.id,
-                    details = { '_id': new ObjectID(id) };
-            //console.log(req);
-            db.collection('notes').findOne(details, (err, item) => {
-                if (err) {
-                    console.log('bd_error: ', err);
-                } else {
-                    console.log('result of find: ', item);
-                    res.send(item);
-                    res.end();
-                }
-            });    
-        });
-        req.on('end', function(){
-            console.log('end of requset');
-        });
-
-    });
-*/
-
-    app.post('/notes', (req, res) => {
+ 
+    app.post('/signin', (req, res) => {
         req.on('data', function(data){
             console.log('requset: ', data.toString());
-            const   dataToNote = JSON.parse(data),
-                    note = { text: dataToNote.nBody, title: dataToNote.nTitle };
+            const   userData = JSON.parse(data),
+                    item = {    name    : userData.name, 
+                                pass    : userData.pass,
+                                email   : userData.email,
+                                birthday: userData.birthday,
+                                sex     : userData.sex
+                            };
                     
-            db.collection('notes').insertOne(note, (err, result) => {
+            db.collection('users').insertOne(item, (err, result) => {
                 if (err) {
                     console.log('bd_error: ', err);
                 } else {

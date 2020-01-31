@@ -10,15 +10,28 @@ document.querySelector('#btnsnd').onclick = function () {
     ajax('/', 'POST', showData, data);
 }
 
-document.querySelector('#btnsnd2').onclick = function () {
-    let nTitle = document.querySelector('#noteTitle').value,
-        nBody = document.querySelector('#noteBody').value,
-        data = JSON.stringify({ nTitle  : nTitle,
-                                nBody   : nBody  });
+document.querySelector('#signup-submit').onclick = function () {
+    let name = document.querySelector('#signup-name').value,
+        pass = document.querySelector('#signup-pass').value,
+        email = document.querySelector('#signup-email').value,
+        birthday = document.querySelector('#signup-birthday').value,
+        sex = document.querySelectorAll('.sex');
+        for (let i = 0; i < sex.length; i++) {
+            if (sex[i].checked) {
+                sex = sex[i].value;
+                break;
+            }
+        }
+        data = JSON.stringify({ name    : name,
+                                pass    : pass,
+                                email   : email,
+                                birthday: birthday,
+                                sex     : sex
+                              });
         
-    ajax('/notes', 'POST', showData, data);
+    ajax('/signin', 'POST', showData, data);
 }
-
+/*
 document.querySelector('#btnsnd3').onclick = function () {
     let id = document.querySelector('#idNote').value,
         url = '/notes/'+id,
@@ -58,7 +71,7 @@ document.querySelector('#btnsnd5').onclick = function () {
 document.querySelector('#btnsnd6').onclick = function () {
         ajax('/notes/all/find', 'GET', receivGetData, null);
 }
-
+*/
 function receivGetData (data) {
     if (data.response != "") {
         data = JSON.parse(data.response);
@@ -86,15 +99,7 @@ function receivGetData (data) {
 
 function showData(data) {
     data = JSON.parse(data.response);
-    if ('fname' in data) {
-        console.log('data: '+data.lname, data.fname);
-    } else if ('_id' in data) {
-        console.log('data: ',JSON.stringify(data));
-        let noteDiv = document.querySelector('#noteDiv'),
-            newP    = document.createElement("p");
-        noteDiv.appendChild(newP);
-        newP.innerHTML = 'id this note is: ' + data._id;
-    }
+    console.log('user add: ', data);
 }
 
 function checkId (id) {

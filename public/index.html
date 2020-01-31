@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">    
 </head>
 
 <body>
@@ -16,20 +16,19 @@
         <p>Last Name: <input id="lname" type="text" name="lname"></p>
         <button id="btnsnd">Send!</button>
     </div> 
-    <div id="noteDiv">
-        <p>Title: <input id="noteTitle" type="text" name="noteTitle"></p>
-        <p>Body: <input id="noteBody" type="text" name="noteBody"></p>
-        <button id="btnsnd2">Send!</button>
+    <div id="signinForm">
+        <h3>Sign-In form</h3>
+        <p>name: <input type="text" name="name" id="signup-name" ></p>
+        <p>password: <input type="text" name="pass" id="signup-pass" ></p>
+        <p>email: <input type="text" name="email" id="signup-email" ></p>
+        <p>birthday: <input type="text" name="birthday" id="signup-birthday"></p>
+        <div>sex:
+            <div> <input type="radio" value="male" name="sex" checked class="sex">male</div>
+            <div><input type="radio" value="female" name="sex" class="sex">female</div>
+        </div>
+        <input type="submit" value="send" id="signup-submit">
     </div>
-    <div id="getNoteDiv">
-        <p>Note id: <input id="idNote" type="text" name="id"></p>
-        <button id="btnsnd3">Get note!</button><button id="btnsnd5">Update the note!</button>
-    </div>
-    <div id="delNoteDiv">
-        <p>Note id: <input id="delIdNote" type="text" name="idNote"></p>
-        <button id="btnsnd4">Delete note</button>
-    </div>
-    <button id="btnsnd6">Get all notes!</button>
+
     <script src="js/ajax.js"></script>
     <script src="js/script.js"></script>
 </body>

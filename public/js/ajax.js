@@ -11,7 +11,7 @@ function ajax(url, method, functionName, dataArray) {
         }
     }
 }
-
+/*
 function requestData(dataArr) {
     let out = '';
     for (let key in dataArr) {
@@ -20,3 +20,4 @@ function requestData(dataArr) {
     //console.log('OUT: '+out);
     return out;
 }
+*/

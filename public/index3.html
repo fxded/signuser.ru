@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <div>
+        <p>Name: <input id="fname" type="text" name="fname"></p>
+        <p>Last Name: <input id="lname" type="text" name="lname"></p>
+        <button id="btnsnd">Send!</button>
+    </div> 
+    <div id="noteDiv">
+        <p>Title: <input id="noteTitle" type="text" name="noteTitle"></p>
+        <p>Body: <input id="noteBody" type="text" name="noteBody"></p>
+        <button id="btnsnd2">Send!</button>
+    </div>
+    <div id="getNoteDiv">
+        <p>Note id: <input id="idNote" type="text" name="id"></p>
+        <button id="btnsnd3">Get note!</button><button id="btnsnd5">Update the note!</button>
+    </div>
+    <div id="delNoteDiv">
+        <p>Note id: <input id="delIdNote" type="text" name="idNote"></p>
+        <button id="btnsnd4">Delete note</button>
+    </div>
+    <button id="btnsnd6">Get all notes!</button>
+    <script src="js/ajax.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
