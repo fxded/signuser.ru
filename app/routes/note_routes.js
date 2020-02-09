@@ -4,14 +4,25 @@ var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function(app, db) {
 
-    app.post ('/', function(req,res){
+    app.post ('/login', function(req,res){
         req.on('data', function(data){
             console.log('requset: ', data.toString());
-            res.send(data);
+            const   userData = JSON.parse(data),
+                     details = {'email': userData.email,
+                                'pass' : userData.password};
+                    
+            db.collection('users').find(details).toArray((err, result) => {
+                if (err) {
+                    console.log('bd_error: ', err);
+                } else {
+                    console.log('result of req: ', result[0].name);
+                    res.send(result[0]);
+                    res.end();
+                }
+            });
         });
         req.on('end', function(){
             console.log('end of requset');
-            res.end();
         });
     });
 

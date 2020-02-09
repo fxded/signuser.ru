@@ -2,12 +2,12 @@
 
 
 document.querySelector('#btnsnd').onclick = function () {
-    let fname = document.querySelector('#fname').value,
-        lname = document.querySelector('#lname').value,
-        data = JSON.stringify({ fname: fname,
-                                lname: lname  });
+    let email = document.querySelector('#login-email').value,
+        password = document.querySelector('#login-password').value,
+        data = JSON.stringify({ email: email,
+                                password: password  });
         
-    ajax('/', 'POST', showData, data);
+    ajax('/login', 'POST', logFunc, data);
 }
 
 document.querySelector('#signup-submit').onclick = function () {
@@ -99,10 +99,15 @@ function receivGetData (data) {
 
 function showData(data) {
     data = JSON.parse(data.response);
-    console.log('user add: ', data);
+    console.log('user cred: ', data);
 }
 
 function checkId (id) {
     if (id.length != 24) return false;
     return true;
+}
+function logFunc (data) {
+console.log(data.response);
+    data = JSON.parse(data.response);
+    document.querySelector('#loginForm').innerHTML = 'Congratulations ' + data.name;
 }
