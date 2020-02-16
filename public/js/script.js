@@ -7,7 +7,7 @@ document.querySelector('#btnsnd').onclick = function () {
         data = JSON.stringify({ email: email,
                                 password: password  });
         
-    ajax('/login', 'POST', logFunc, data);
+    ajax('/login', 'POST', showCabinet, data);
 }
 
 document.querySelector('#signup-submit').onclick = function () {
@@ -22,12 +22,11 @@ document.querySelector('#signup-submit').onclick = function () {
                 break;
             }
         }
-        data = JSON.stringify({ name    : name,
-                                pass    : pass,
-                                email   : email,
-                                birthday: birthday,
-                                sex     : sex
-                              });
+        data = JSON.stringify({ username    : name,
+                                password    : pass,
+                                email       : email,
+                                birthday    : birthday,
+                                sex         : sex });
         
     ajax('/signin', 'POST', showData, data);
 }
@@ -101,13 +100,22 @@ function showData(data) {
     data = JSON.parse(data.response);
     console.log('user cred: ', data);
 }
-
+function showCabinet(data) {
+//    data = JSON.parse(data);
+    console.log(data);
+    document.write (data.response);
+}
 function checkId (id) {
     if (id.length != 24) return false;
     return true;
 }
 function logFunc (data) {
-console.log(data.response);
-    data = JSON.parse(data.response);
-    document.querySelector('#loginForm').innerHTML = 'Congratulations ' + data.name;
+    console.log(data.response);
+    if (data.response) {
+        data = JSON.parse(data.response);
+//        window.location.href = 'cabinet.html';
+        document.querySelector('#user').innerHTML = 'Congratulations ' + data.name;
+    } else {
+        console.log('user not found !')
+    }
 }
