@@ -4,10 +4,13 @@ function ajax(url, method, functionName, dataArray) {
     xhttp.open(method, url, true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(dataArray);
-    console.log(url, dataArray);
+    console.log('xhttp request:',url, dataArray);
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             functionName(this);
+        } else if (this.status == 401) {
+            functionName(this.status);
+            console.log('other:',this);
         }
     }
 }

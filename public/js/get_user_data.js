@@ -26,11 +26,13 @@ document.querySelector('#update-submit').onclick = function () {
 
 function getResult (response) {
     console.log(response);
-    if (response.response.updatestatus == 1) {
+    data = JSON.parse(response.response);
+    if (data.updatestatus == 1) {
         alert('Данные успешно обновлены!');
     }
     else {
         alert('ошибка обновления');
+        console.log(data);
     }
     
 }

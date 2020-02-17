@@ -89,6 +89,8 @@ module.exports = function(app) {
                     var err = new Error('Wrong email or password.');
                     err.status = 401;
                     console.log('------->error authenticate:', error);
+                    res.writeHead(401);
+                    res.end();
                 } else {
                     console.log('------->finding user:', user);
                     req.session.userId = user._id;
@@ -114,12 +116,16 @@ module.exports = function(app) {
                 User.findById(req.session.userId, (err, usr) => {
                     if (err) {
                         console.log('------->update error:', err);
+                        res.send(err);
+                        res.end();
                     } else {
                         console.log('------->update user:', usr);
                         usr.password = userData.password;
                         usr.username = userData.username;
                         usr.birthday = userData.birthday;
                         usr.save();
+                        res.send({updatestatus:1});
+                        res.end();
                     }
                 });
              }
@@ -129,7 +135,7 @@ module.exports = function(app) {
         });
     });
 
-    // POST route for update to userdata
+    // POST route for get userdata
     app.post('/getuser', function (req, res, next) {
         console.log('-------getuser',req.session);
         if (req.session.userId) {

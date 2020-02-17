@@ -5,22 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">    
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" media="screen,projection">    
+    <title>User profile</title>
 </head>
 
 <body>
-    <h1>User Page</h1>
-    <button id="logout">LogOUT</button>
-
-    <div id="signinForm">
-        <div>name: <input type="text" name="name" id="signup-name"></div>
-        <div>new password: <input type="text" name="pass" id="signup-pass"></div>
-        <div>Confirm password: <input type="text" name="pass" id="signup-confpass"></div>
-        <div>birthday: <input type="text" name="birthday" id="signup-birthday"></div>
-        <input type="submit" value="update" id="update-submit">
+    <div class="container">
+        <div class="row">
+            <div class="col l12 center-align">
+                <h1 class="user-cabinet-header">User Page</h1>
+            </div>
+            <div class="col l12 center-align">
+                <button id="logout" class="waves-effect waves-light btn blue lighten-1">
+                    <i class="material-icons right">    </i> Logout</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l6">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="signup-name" type="text" class="validate">
+                        <label class="active" for="signup-name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="signup-birthday" type="text" class="datepicker">
+                        <label class="active" for="signup-birthday">Birthday</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="signup-pass" type="password" class="validate">
+                        <label class="active" for="signup-pass">Password</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="signup-confpass" type="password" class="validate">
+                        <label class="active" for="signup-confpass">Confirm password</label>
+                    </div>
+<!--                    <div class="col l12">
+                        <p>
+                            <label>
+                            <input name="group1" type="radio" checked />
+                            <span>Male</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input name="group1" type="radio" />
+                            <span>Female</span>
+                            </label>
+                        </p>
+                    </div>
+-->
+                <div class="col l12 right-align">
+                        <button id="update-submit" class="waves-effect waves-light btn blue lighten-1">Update</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        
+<!--        
+        <div id="signinForm">
+            <div>name: <input type="text" name="name" id="signup-name"></div>
+            <div>new password: <input type="text" name="pass" id="signup-pass"></div>
+            <div>Confirm password: <input type="text" name="pass" id="signup-confpass"></div>
+            <div>birthday: <br><input type="date" name="birthday" id="signup-birthday"></div>
+            <input type="submit" value="update" id="update-submit">
+        </div>
+-->
     </div>
-
+    <script type="text/javascript" src="js/materialize.js"></script>
     <script src="js/ajax.js"></script>
     <script src="js/get_user_data.js"></script>
     <script src="js/logout.js"></script>
