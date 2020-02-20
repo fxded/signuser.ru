@@ -6,10 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">    
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
 </head>
-
 <body>
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col l8">
+                    <h1 class="site-title center-align">Our Project</h1>
+                </div>
+                <br><br>
+                <div class="col l2">
+                    <button class="modal-show waves-effect waves-light btn" data-modal="#sign-up">Signup</button>
+                </div>
+                <div class="col l2">
+                    <button class="modal-show waves-effect waves-light btn" data-modal="#log-in">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="modal-wrap hide" id="sign-up">
+        <div class="modal-project sign-up-modal">
+            <button class="modal-project-close btn-floating waves-effect waves-light blue lighten-1">
+                <b class="material-icons">X</b></button>
+            <div class="form-slider-wrapper">
+                <div class="form-slider">
+                    <div class="left-50">
+                        <form>
+                            <div class="row">
+                                <div class="input-field col l6">
+                                    <input name="name" id="signup-name" type="text" class="validate">
+                                    <label for="signup-name">Name</label>
+                                </div>
+                                <div class="input-field col l6">
+                                    <input name="Birthday" id="signup-birthday" type="text"
+                                        class="datepicker">
+                                    <label for="signup-birthday">birthday</label>
+                                </div>
+                                <div class="input-field col l6">
+                                    <input name="pass" id="signup-pass" type="password" class="validate">
+                                    <label for="signup-pass">Password</label>
+                                </div>
+                                <div class="input-field col l6">
+                                    <input name="pass" id="signup-confpass" type="password" class="validate">
+                                    <label for="signup-confpass">Confirm password</label>
+                                </div>
+                                <div class="input-field col l6">
+                                    <input name="email" id="signup-email" type="email" class="validate">
+                                    <label for="signup-email">Email</label>
+                                </div>
+                                <div class="col l12">
+                                    <p>
+                                        <label>
+                                            <input type="radio" value="male" name="sex" checked class="sex">
+                                            <span>Male</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input type="radio" value="female" name="sex" class="sex">
+                                            <span>Female</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col l6">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" id="agree-rules">
+                                            <span>Agree Rules</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col l6">
+                                    <p class="read-rules">
+                                        (read rules)
+                                    </p>
+                                </div>
+                                <div class="col l12 right-align">
+                                    <button id="signup-submit" class="waves-effect waves-light btn disabled">Sign In</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-50">
+                        <p class="read-rules-back">Back</p>
+                        <p>Соглашение об присоединении</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrap hide" id="log-in">
+        <div class="modal-project">
+                <div class="row">
+                    <div class="input-field col l12">
+                        <input name="email" id="login-email" type="text" class="validate">
+                        <label for="login-email">Email</label>
+                    </div>
+                    <div class="input-field col l12">
+                        <input name="passw" id="login-password" type="password">
+                        <label for="login-pass">Password</label>
+                    </div>
+                    <div class="col l12 right-align">
+                        <button id="login-submit" class="waves-effect waves-light btn">Login</button>
+                    </div>
+                </div>
+            <button class="modal-project-close btn-floating waves-effect waves-light blue lighten-1">
+                <b class="material-icons">X</b></button>
+        </div>
+    </div>
+<!--
     <div id="loginForm">
         <h3>Login form</h3>
         <p>email: <input id="login-email" type="text" name="email"></p>
@@ -23,14 +132,26 @@
         <p>Confirm password: <input type="text" name="pass" id="signup-confpass"></p>
         <p>email: <input type="text" name="email" id="signup-email" ></p>
         <p>birthday: <br><input type="date" name="birthday" id="signup-birthday"></p>
-        <div>sex:
-            <div> <input type="radio" value="male" name="sex" checked class="sex">male</div>
-            <div><input type="radio" value="female" name="sex" class="sex">female</div>
+        <div class="col l12">
+            <p>
+                <label>
+                <input name="group1" type="radio" checked />
+                <span>Male</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                <input name="group1" type="radio" />
+                <span>Female</span>
+                </label>
+            </p>
         </div>
         <input type="submit" value="send" id="signup-submit">
     </div>
-
+-->
+    <script type="text/javascript" src="js/materialize.js"></script>
     <script src="js/ajax.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/script.js"></script>
 </body>
 

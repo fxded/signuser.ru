@@ -1,7 +1,7 @@
 //ajax(url, method, functionName, dataArray)
 
 
-document.querySelector('#btnsnd').onclick = function () {
+document.querySelector('#login-submit').onclick = function () {
     let email = document.querySelector('#login-email').value,
         password = document.querySelector('#login-password').value,
         data = JSON.stringify({ email: email,
