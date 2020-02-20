@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.datepicker');
     let instances = M.Datepicker.init(elems, {
-        "format": "yyyy-mm-dd"
+        "format": "dd.mm.yyyy"
     });
 });
 
@@ -21,7 +21,7 @@ document.querySelector('#update-submit').onclick = function () {
         birthday = document.querySelector('#signup-birthday').value;
 
     if ((pass != confpass) || ((name == '') || (birthday == '') || (pass == ''))) { 
-        alert("Passwords do not match. Please try again.");
+        M.toast({ html: "Passwords do not match. Please try again."});
     } else {
         data = JSON.stringify({ username    : name,
                                 password    : pass,
@@ -35,10 +35,10 @@ function getResult (response) {
     console.log(response);
     data = JSON.parse(response.response);
     if (data.updatestatus == 1) {
-        alert('Данные успешно обновлены!');
+        M.toast({ html: 'Данные успешно обновлены!'});
     }
     else {
-        alert('ошибка обновления');
+        M.toast({ html: 'ошибка обновления'});
         console.log(data);
     }
     

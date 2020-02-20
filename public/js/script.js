@@ -24,7 +24,7 @@ document.querySelector('#signup-submit').onclick = function () {
         }
     }
     if ((pass != confpass) || ((name == '') || (birthday == '') || (pass == ''))) { 
-        alert("Passwords do not match. Please try again.");
+        M.toast({ html: "Passwords do not match. Please try again."});
     } else {
         data = JSON.stringify({ username    : name,
                                 password    : pass,
@@ -44,7 +44,7 @@ function showData(data) {
 function showCabinet(data) {
     if (data == 401) {
         console.log(data);
-        alert('Wrong email or password.');
+        M.toast({ html: 'Wrong email or password.'});
     } else {
         console.log('ok',data);
         document.write (data.response);
@@ -58,6 +58,6 @@ function logFunc (data) {
 //        window.location.href = 'cabinet.html';
         document.querySelector('#user').innerHTML = 'Congratulations ' + data.name;
     } else {
-        console.log('user not found !')
+        M.toast({ html: 'user not found !'})
     }
 }
